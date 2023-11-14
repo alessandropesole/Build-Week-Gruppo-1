@@ -15,9 +15,28 @@ header img {
 }
 
 #container {
-  margin: 50px 95px;
+  margin: 30px 160px;
 }
 
 form label {
   color: white;
+}
+
+button {
+    background-color: grey;
+    font-size: 1.8em;
+    padding: 15px 60px ;
+    
+}
+button a {
+    text-decoration: none;
+    color:#0B113B;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+}
+
+button:checked {
+    background-color: #54EFFF;
+    -webkit-box-shadow: 5px 0px 36px 6px #54EFFF; 
+    box-shadow: 5px 0px 36px 6px #54EFFF;
 }
