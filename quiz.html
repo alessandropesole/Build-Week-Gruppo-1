@@ -1,18 +1,52 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz</title>
     <link rel="stylesheet" href="assets/css/style.css" />
-</head>
+  </head>
 
-<body>
-<div id="container">
-<header>
-    <img src="assets/images/epicode_logo.png" alt="logo"/>
-</header>
-</div> 
-</body>
-
+  <body>
+    <div id="container">
+      <header>
+        <img src="assets/images/epicode_logo.png" alt="logo" />
+      </header>
+      <div id="countdown"></div>
+      <main>
+        <div id="question">
+          <h1></h1>
+        </div>
+        <div id="answers">
+          <!-- Display: none o block al div corretto, in base alla tipologia di domanda-->
+          <div id="four-answers">
+            <div class="answers-line">
+              <div id="answer-1">
+                <button type="button"></button>
+              </div>
+              <div id="answer-2">
+                <button type="button"></button>
+              </div>
+            </div>
+            <div class="answers-line">
+              <div id="answer-3">
+                <button type="button"></button>
+              </div>
+              <div id="answer-4">
+                <button type="button"></button>
+              </div>
+            </div>
+          </div>
+          <!-- Display: none o block al div corretto, in base alla tipologia di domanda-->
+          <div id="two-answers">
+            <div id="answer-true">True</div>
+            <div id="answer-false">False</div>
+          </div>
+        </div>
+        <div id="counter">
+          <h5><span> / 10</span></h5>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>
