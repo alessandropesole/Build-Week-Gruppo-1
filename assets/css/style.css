@@ -27,7 +27,17 @@ header img {
   margin: 30px 160px;
 }
 
-form label {
+#check {
+  appearance: none;
+  border: 1px solid white;
+  width: 12px; 
+  height: 12px;
+}
+
+
+#checklabel {
+  font-size: medium;
+  display: inline;
   color: white;
     margin: 50px 95px;
 }
@@ -77,4 +87,7 @@ button:checked {
     background-color: #54EFFF;
     -webkit-box-shadow: 5px 0px 36px 6px #54EFFF; 
     box-shadow: 5px 0px 36px 6px #54EFFF;
+}
+#check:checked {
+  background-color: #D20094;
 }
