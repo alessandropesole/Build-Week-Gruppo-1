@@ -18,6 +18,21 @@ header img {
   margin: 50px 95px;
 }
 
-form label {
+#check {
+  appearance: none;
+  border: 1px solid white;
+  width: 12px; 
+  height: 12px;
+}
+
+
+#checklabel {
+  font-size: medium;
+  display: inline;
   color: white;
+  background-color: transparent;
+}
+
+#check:checked {
+  background-color: #D20094;
 }
