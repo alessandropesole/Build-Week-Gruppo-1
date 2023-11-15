@@ -1,4 +1,29 @@
-// Base dati per il quiz
+function quiz() {
+  var total = document.forms.length - 1;
+  var ncorrect = 0;
+  var response = [];
+  var answer = [];
+
+  for (var i = 0; i < total; i++) {
+    var currentForm = document.forms[i];
+    response.push(currentForm.answer.selectedIndex);
+    answer.push(currentForm.correct.value);
+
+    if (response[i] === 0) {
+      alert("Attenzione la domanda #" + (i + 1) + " non ha avuto risposta");
+      return; // Termina la funzione se una domanda non è stata risposta
+    }
+
+    if (response[i] === answer[i]) {
+      ncorrect++;
+    }
+  }
+
+  document.total.score.value = ncorrect;
+  var per = Math.round((ncorrect / total) * 100);
+  document.total.percent.value = per;
+  document.total.outof.value = total;
+}
 
 const questions = [
   {
