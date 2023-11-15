@@ -6,4 +6,4 @@ starEls.forEach((star) => {
    // /console.log(starEl.parentNode.dataset.stars + ", " + starEl.dataset.rating);/;
     starEl.parentNode.setAttribute('data-stars', starEl.dataset.rating);
   });
-});
+})
