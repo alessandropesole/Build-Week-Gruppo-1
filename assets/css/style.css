@@ -3,15 +3,14 @@
 
 body {
   font-size: 1.2em;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-image: url(../images/bg.jpg);
-    background-size: 100%;
-    color:white;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url(../images/bg.jpg);
+  background-size: 100%;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  background-repeat: no-repeat;
 }
 
 header img {
@@ -33,7 +32,7 @@ header img {
   font-size: medium;
   display: inline;
   color: white;
-padding-left: 10px;
+  padding-left: 10px;
 }
 
 h1 {
@@ -65,25 +64,20 @@ ul {
   margin-bottom: 70px;
 }
 
-button {
-    background-color: #54EFFF;
-    font-size: 1.8em;
-    padding: 15px 60px ;
-    -webkit-box-shadow: 2px 0px 18px 3px #54EFFF; 
-    box-shadow: 2px 0px 18px 3px #54EFFF;
-    border-color: (#0B113B(118, 118, 118, 0.3));
-
-}
-
-button a {
-    text-decoration: none;
-    color:#0B113B;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 800;
+.button {
+  background-color: #54efff;
+  font-size: 1.2em;
+  padding: 15px 60px;
+  -webkit-box-shadow: 2px 0px 18px 3px #54efff;
+  box-shadow: 2px 0px 18px 3px #54efff;
+  cursor: pointer;
+  border: none;
+  color: #0b113b;
+  font-family: 'Outfit', sans-serif;
 }
 
 #check:checked {
-  background-color: #D20094;
+  background-color: #d20094;
 }
 
 #checked {
@@ -96,8 +90,124 @@ button a {
 
 #checked div:nth-of-type(1) {
   width: 60%;
-
 }
 #checked div:nth-of-type(2) {
   width: 30%;
+}
+
+input {
+  width: 55%;
+  border: none;
+  height: 25px;
+  text-align: center;
+}
+
+input[type='text'] {
+  background: transparent;
+}
+
+.input {
+  margin-left: 105px;
+}
+
+input::placeholder {
+  text-align: left;
+}
+
+hr {
+  width: 35%;
+  border-color: #d20094;
+  margin-top: -25px;
+  margin-bottom: 40px;
+}
+
+section p {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#reviewPage,
+.button-review {
+  text-align: center;
+}
+
+#reviewPage h1 {
+  font-size: 2.5em;
+}
+
+#reviewPage p {
+  font-size: 1.2em;
+}
+
+#reviewPage {
+  margin-top: 100px;
+}
+
+.stars {
+  cursor: pointer;
+
+  &[data-stars] {
+    .star path {
+      fill: #00ffff;
+    }
+  }
+
+  &[data-stars='1'] {
+    .star:nth-child(1) ~ .star path {
+      fill: #080c2c;
+    }
+  }
+
+  &[data-stars='2'] {
+    .star:nth-child(2) ~ .star path {
+      fill: #080c2c;
+    }
+  }
+
+  &[data-stars='3'] {
+    .star:nth-child(3) ~ .star path {
+      fill: #080c2c;
+    }
+  }
+
+  &[data-stars='4'] {
+    .star:nth-child(4) ~ .star path {
+      fill: #080c2c;
+    }
+  }
+
+  &[data-stars='5'] {
+    .star:nth-child(5) ~ .star path {
+      fill: #080c2c;
+    }
+  }
+  &[data-stars='6'] {
+    .star:nth-child(6) ~ .star path {
+      fill: #080c2c;
+    }
+  }
+  &[data-stars='7'] {
+    .star:nth-child(7) ~ .star path {
+      fill: #080c2c;
+    }
+  }
+  &[data-stars='8'] {
+    .star:nth-child(8) ~ .star path {
+      fill: #080c2c;
+    }
+  }
+  &[data-stars='9'] {
+    .star:nth-child(9) ~ .star path {
+      fill: #080c2c;
+    }
+  }
+  &[data-stars='10'] {
+    .star:nth-child(10) ~ .star path {
+      fill: #080c2c;
+    }
+  }
+}
+
+svg {
+  margin-right: 10px;
 }
