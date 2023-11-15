@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@500&family=Outfit:wght@300;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&display=swap');
+
+body {
+  font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(../images/bg.jpg);
+   background-size: 100%;
+   color:white;
+   font-family: 'Inter', sans-serif;
+   font-size: 16px;
+  background-repeat: no-repeat;
+}
+
+header img {
+  width: 12%;
+}
+
+#container {
+  margin: 30px 160px;
+}
+
+#check {
+  appearance: none;
+  border: 1px solid white;
+  width: 12px; 
+  height: 12px;
+}
+
+
+#checklabel {
+  font-size: medium;
+  display: inline;
+  color: white;
+padding-left: 10px;
+}
+
+h1 {
+    font-family: Outfit;
+    font-size: 60px;
+    font-weight: 300;
+line-height: 0.7;
+}
+
+span {
+    font-weight: 700; 
+}
+
+h2 {
+    font-family: Outfit;
+    color: #D20094;
+}
+
+#corpo p {
+ margin-top: -15px; 
+}
+
+ul {
+  line-height: 1.5;
+  margin-left: -18px;
+}
+
+#lista {
+  margin-bottom: 70px;
+}
+
+button {
+    background-color: #54EFFF;
+    font-size: 1.8em;
+    padding: 15px 60px ;
+    -webkit-box-shadow: 2px 0px 18px 3px #54EFFF; 
+    box-shadow: 2px 0px 18px 3px #54EFFF;
+    border-color: (#0B113B(118, 118, 118, 0.3));
+
+}
+
+button a {
+    text-decoration: none;
+    color:#0B113B;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+}
+
+#check:checked {
+  background-color: #D20094;
+}
+
+#checked {
+  display: block;
+  width: 100%;
+}
+.checked {
+  display: inline-block;
+}
+
+#checked div:nth-of-type(1) {
+  width: 60%;
+
+}
+#checked div:nth-of-type(2) {
+  width: 30%;
+}
