@@ -2,22 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&display=swap');
 
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   font-size: 1.2em;
-  background-image: url(../images/bg.jpg);
-  background-size: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   /* font-size: 1.2em; */
     background-image: url(../images/bg.jpg);
    background-size: 100%;
    color:white;
    font-family: 'Inter', sans-serif;
    font-size: 16px;
-   
 }
 
 header img {
@@ -40,7 +33,8 @@ header img {
   font-size: medium;
   display: inline;
   color: white;
-    margin: 50px 95px;
+position: absolute;
+padding-left: 10px;
 }
 
 h1 {
@@ -71,14 +65,18 @@ ul {
 #lista {
   margin-bottom: 70px;
 }
+
 button {
-    background-color: grey;
+    background-color: #54EFFF;
     font-size: 1.8em;
     padding: 15px 60px ;
     -webkit-box-shadow: 2px 0px 18px 3px #54EFFF; 
-    box-shadow: 2px 0px 18px 3px #54EFFF;
+    box-shadow: 2px 0px 18px 3px #54EFFF;  
     border-color: (#0B113B(118, 118, 118, 0.3));
+    margin-left: 600px; 
+    
 }
+
 button a {
     text-decoration: none;
     color:#0B113B;
@@ -90,17 +88,11 @@ button a {
   background-color: #D20094;
 }
 
-#checked {
+#checked{
   display: block;
-  width: 120%;
 }
-.checked {
+
+.checked{
   display: inline-block;
-}
-#checked div:nth-of-type(1) {
-  width: 60%;
-  margin-right: 0px;
-}
-#checked div:nth-of-type(2) {
-  width: 30%;
+  border: 1px solid red;
 }
