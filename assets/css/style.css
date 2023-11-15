@@ -104,6 +104,11 @@ input {
 
 input[type='text'] {
   background: transparent;
+  color:white;
+  text-align: left;
+}
+input:focus {
+    outline: none;
 }
 
 .input {
