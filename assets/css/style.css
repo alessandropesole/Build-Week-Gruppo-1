@@ -6,7 +6,6 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   
     background-image: url(../images/bg.jpg);
    background-size: 100%;
    color:white;
@@ -66,14 +65,16 @@ ul {
 #lista {
   margin-bottom: 70px;
 }
+
 button {
     background-color: #54EFFF;
     font-size: 1.8em;
     padding: 15px 60px ;
     -webkit-box-shadow: 2px 0px 18px 3px #54EFFF; 
     box-shadow: 2px 0px 18px 3px #54EFFF;  
-    border-color: -internal-light-dark(#0B113B(118, 118, 118, 0.3));
-    margin-left: 600px;
+    border-color: (#0B113B(118, 118, 118, 0.3));
+    margin-left: 600px; 
+    
 }
 
 button a {
@@ -87,7 +88,11 @@ button a {
   background-color: #D20094;
 }
 
-.checked {
-    display: inline-block;
-}
+
+
+
+
+
+
+
 
