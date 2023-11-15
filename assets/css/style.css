@@ -3,14 +3,14 @@
 
 body {
   font-size: 1.2em;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-image: url(../images/bg.jpg);
-  background-size: 100%;
-  color: white;
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(../images/bg.jpg);
+   background-size: 100%;
+   color:white;
+   font-family: 'Inter', sans-serif;
+   font-size: 16px;
   background-repeat: no-repeat;
 }
 
@@ -33,7 +33,7 @@ header img {
   font-size: medium;
   display: inline;
   color: white;
-  padding-left: 10px;
+padding-left: 10px;
 }
 
 h1 {
@@ -66,23 +66,24 @@ ul {
 }
 
 button {
-  background-color: #54efff;
-  font-size: 1.8em;
-  padding: 15px 60px;
-  -webkit-box-shadow: 2px 0px 18px 3px #54efff;
-  box-shadow: 2px 0px 18px 3px #54efff;
-  border-color: (#0B113B(118, 118, 118, 0.3));
+    background-color: #54EFFF;
+    font-size: 1.8em;
+    padding: 15px 60px ;
+    -webkit-box-shadow: 2px 0px 18px 3px #54EFFF; 
+    box-shadow: 2px 0px 18px 3px #54EFFF;
+    border-color: (#0B113B(118, 118, 118, 0.3));
+
 }
 
 button a {
-  text-decoration: none;
-  color: #0b113b;
-  font-family: 'Outfit', sans-serif;
-  font-weight: 800;
+    text-decoration: none;
+    color:#0B113B;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
 }
 
 #check:checked {
-  background-color: #d20094;
+  background-color: #D20094;
 }
 
 #checked {
@@ -95,6 +96,7 @@ button a {
 
 #checked div:nth-of-type(1) {
   width: 60%;
+
 }
 #checked div:nth-of-type(2) {
   width: 30%;
