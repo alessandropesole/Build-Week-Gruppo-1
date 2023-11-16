@@ -108,12 +108,8 @@ input[type='text'] {
   text-align: left;
 }
 
-input:focus {
-  outline: none;
-}
-
 .input {
-  margin-left: 105px;
+  margin-left: 150px;
 }
 
 input::placeholder {
@@ -213,7 +209,46 @@ section p {
     }
   }
 }
-
+input:focus {
+  outline: none;
+}
 svg {
-  margin-right: 10px;
+  margin-left: 10px;
+}
+#paginaQuiz {
+  text-align: center;
+  margin-top: 200px;
+}
+#question h1 {
+  margin-bottom: 60px;
+  line-height: 1.1em;
+}
+
+#four-answers button {
+  font-size: large;
+  border: none;
+  background-color: rgba(117, 117, 117, 0.212);
+  width: 30pc;
+  height: 80px;
+  border-radius: 50px;
+  cursor: pointer;
+  justify-content: center;
+  margin: 20px 20px;
+
+  color: rgb(255, 255, 255);
+  box-shadow: rgb(255, 255, 255) -2px -2px 0px, rgba(255, 255, 255) 0px -3px 0px,
+    rgba(255, 255, 255) 0px 0px 0px, rgba(255, 255, 255) -3px 0px 0px;
+}
+
+#answer-1,
+#answer-2,
+#answer-3,
+#answer-4 {
+  display: inline;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+#span {
+  color: #d20094;
 }
