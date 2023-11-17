@@ -8,3 +8,5 @@ function enableButton() {
     btnProceed.disabled = true;
   }
 }
+
+/*STELLE RECENSIONI */

@@ -1,30 +1,3 @@
-function quiz() {
-  var total = document.forms.length - 1;
-  var ncorrect = 0;
-  var response = [];
-  var answer = [];
-
-  for (var i = 0; i < total; i++) {
-    var currentForm = document.forms[i];
-    response.push(currentForm.answer.selectedIndex);
-    answer.push(currentForm.correct.value);
-
-    if (response[i] === 0) {
-      alert("Attenzione la domanda #" + (i + 1) + " non ha avuto risposta");
-      return; // Termina la funzione se una domanda non è stata risposta
-    }
-
-    if (response[i] === answer[i]) {
-      ncorrect++;
-    }
-  }
-
-  document.total.score.value = ncorrect;
-  var per = Math.round((ncorrect / total) * 100);
-  document.total.percent.value = per;
-  document.total.outof.value = total;
-}
-
 const questions = [
   {
     category: 'Science: Computers',
@@ -43,7 +16,7 @@ const questions = [
     type: 'multiple',
     difficulty: 'easy',
     question:
-      'In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?',
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     correct_answer: 'Final',
     incorrect_answers: ['Static', 'Private', 'Public'],
   },
@@ -122,3 +95,99 @@ const questions = [
 ];
 
 
+
+/* Caricare la prima domanda e le prime risposte */
+
+const paginaQuiz = document.getElementById('paginaQuiz');
+const countdown = document.getElementById('countdown');
+let question = document.querySelector('#question h1');
+const answers = document.getElementById('answers');
+const fourAnswers = document.getElementById('four-answers');
+const twoAnswers = document.getElementById('two-answers');
+const counter = document.getElementById('counter');
+let answer1 = document.querySelector('#answer-1 button');
+let answer2 = document.querySelector('#answer-2 button');
+let answer3 = document.querySelector('#answer-3 button');
+let answer4 = document.querySelector('#answer-4 button');
+let answerLine2 = document.getElementById('answer-line2');
+
+let answer = '';
+
+let score = 0; //registraPunteggio
+let questionNumber = 0;
+
+paginaQuiz.addEventListener('load', caricaQuiz());
+
+function caricaQuiz() {
+  setTimer();
+if (questionNumber < questions.length) {
+  const domandaCorrente = questions[questionNumber].question;
+  question.innerText = domandaCorrente;
+
+  question.innerText = domandaCorrente;
+
+  answer1.innerText = questions[questionNumber].correct_answer;
+  answer2.innerText = questions[questionNumber].incorrect_answers[0];
+  // if (answerLine2 )
+  let btnContent3 = answer3.innerText = questions[questionNumber].incorrect_answers[1];
+  let btnContent4 = answer4.innerText = questions[questionNumber].incorrect_answers[2];
+  if (answer3.innerText === 'undefined' && answer4.innerText === 'undefined') {
+  
+  }
+
+  fourAnswers.appendChild(answer1);
+  fourAnswers.appendChild(answer2);
+  fourAnswers.appendChild(answer3);
+  fourAnswers.appendChild(answer4);
+}
+
+}
+
+answer1.addEventListener('click', function () {
+verificaRisposta(answer1.innerText);
+});
+answer2.addEventListener('click', function () {
+verificaRisposta(answer2.innerText);
+});
+answer3.addEventListener('click', function () {
+verificaRisposta(answer3.innerText);
+});
+answer4.addEventListener('click', function () {
+verificaRisposta(answer4.innerText);
+});
+
+function verificaRisposta(answer) {
+console.log(answer);
+if (answer === answer1.innerText) {
+  score ++
+  console.log('risposta esatta');
+}
+
+cambioDomanda();
+}
+
+// Cambio domanda
+
+function cambioDomanda() {
+questionNumber++;
+caricaQuiz();
+}
+
+function setTimer() {
+  let timer = 10; 
+  let interval = setInterval(function() {
+      timer--; 
+      document.getElementById('countdown').innerHTML = timer; 
+
+    if (timer === 0 ) {
+        clearInterval(interval);
+        cambioDomanda();
+}
+},1000);  
+}
+startCountdown();{
+
+document.getElementById('answer-1').onclick= function() {
+    setTimer();
+  };
+}
