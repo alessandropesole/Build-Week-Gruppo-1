@@ -213,3 +213,49 @@ section p {
 input:focus{
   outline: none;
 }
+svg {
+  margin-left: 10px;
+}
+#paginaQuiz{
+  text-align: center;
+  margin-top:130px;
+}
+#question h1 {
+  margin-bottom: 60px;
+}
+
+#four-answers button{
+  font-size: large;
+  border: none;
+  background-color:rgba(117, 117, 117, 0.212);
+  width: 30pc;
+  height: 80px;
+  border-radius: 50px;
+  cursor: pointer;
+  justify-content: center;
+  margin: 20px auto;
+  color: rgb(255, 255, 255);
+  box-shadow: rgb(255, 255, 255) -2px -2px 0px, rgba(255, 255, 255) 0px -3px 0px, rgba(255, 255, 255) 0px 0px 0px, rgba(255, 255, 255) -3px 0px 0px ;
+}
+#answer-1, #answer-2, #answer-3, #answer-4{
+  display: inline;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+#four-answers button:hover {
+  background-image: linear-gradient(#d20094, rgb(100, 32, 69));
+}
+
+#question h1 {
+  margin-bottom: 60px;
+  line-height: 1.1em;
+}
+#counter span {
+  color: #d20094;
+}
+#counter {
+  margin-top: 200px;
+}
+#countdown {
+  text-align: right;
+}
