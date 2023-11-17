@@ -11,6 +11,7 @@
     <div id="container">
       <header>
         <img src="assets/images/epicode_logo.png" alt="logo" />
+        <div id="countdown"></div>
       </header>
       <div id="barp">
         <div id="bar">
@@ -19,6 +20,35 @@
         </div>
       </div>
       <main>
+        <div id="paginaQuiz" onload="caricaQuiz()">
+          
+
+          <div id="question">
+            <h1></h1>
+          </div>
+
+          <div id="answers">
+            <!-- Display: none o block al div corretto, in base alla tipologia di domanda-->
+            <div id="four-answers">
+              <div class="answers-line">
+                <div id="answer-1">
+                  <button type="button"></button>
+                </div>
+                <div id="answer-2">
+                  <button type="button"></button>
+                </div>
+              </div>
+              <div class="answers-line" id="answer-line2">
+                <div id="answer-3">
+                  <button type="button"></button>
+                </div>
+                <div id="answer-4">
+                  <button type="button"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="counter">
         <div id="paginaQuiz">
         <div id="question">
           <h1>aasassdasd</h1>
@@ -51,7 +81,7 @@
           </div>
         </div>
         <div id="counter">
-          <h5><span><!-- indice array contatore --> </span></h5>
+          <h5><span> / 10</span></h5>
         </div>
       </main>
     </div>

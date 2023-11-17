@@ -3,13 +3,14 @@
 
 body {
   font-size: 1.2em;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-image: url(../images/bg.jpg);
-  background-size: 110%;
-  color: white;
-  font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(../images/bg.jpg);
+   background-size: 100%;
+   color:white;
+   font-family: 'Inter', sans-serif;
+   font-size: 16px;
   background-repeat: no-repeat;
 }
 
@@ -96,155 +97,4 @@ ul {
 }
 #checked div:nth-of-type(2) {
   width: 30%;
-}
-
-input {
-  width: 55%;
-  border: none;
-  height: 25px;
-  text-align: center;
-}
-
-input[type='text'] {
-  background: transparent;
-}
-
-.input {
-  margin-left: 105px;
-}
-
-input::placeholder {
-  text-align: left;
-}
-
-hr {
-  width: 35%;
-  border-color: #d20094;
-  margin-top: -25px;
-  margin-bottom: 40px;
-}
-
-section p {
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-#reviewPage,
-.button-review {
-  text-align: center;
-}
-
-#reviewPage h1 {
-  font-size: 2.5em;
-}
-
-#reviewPage p {
-  font-size: 1.2em;
-}
-
-#reviewPage {
-  margin-top: 100px;
-}
-
-.stars {
-  cursor: pointer;
-
-  &[data-stars] {
-    .star path {
-      fill: #00ffff;
-    }
-  }
-
-  &[data-stars='1'] {
-    .star:nth-child(1) ~ .star path {
-      fill: #080c2c;
-    }
-  }
-
-  &[data-stars='2'] {
-    .star:nth-child(2) ~ .star path {
-      fill: #080c2c;
-    }
-  }
-
-  &[data-stars='3'] {
-    .star:nth-child(3) ~ .star path {
-      fill: #080c2c;
-    }
-  }
-
-  &[data-stars='4'] {
-    .star:nth-child(4) ~ .star path {
-      fill: #080c2c;
-    }
-  }
-
-  &[data-stars='5'] {
-    .star:nth-child(5) ~ .star path {
-      fill: #080c2c;
-    }
-  }
-  &[data-stars='6'] {
-    .star:nth-child(6) ~ .star path {
-      fill: #080c2c;
-    }
-  }
-  &[data-stars='7'] {
-    .star:nth-child(7) ~ .star path {
-      fill: #080c2c;
-    }
-  }
-  &[data-stars='8'] {
-    .star:nth-child(8) ~ .star path {
-      fill: #080c2c;
-    }
-  }
-  &[data-stars='9'] {
-    .star:nth-child(9) ~ .star path {
-      fill: #080c2c;
-    }
-  }
-  &[data-stars='10'] {
-    .star:nth-child(10) ~ .star path {
-      fill: #080c2c;
-    }
-  }
-}
-svg{
-  margin-right: 10px;
-}
-#paginaQuiz{
-  text-align: center;
-}
-
-#four-answers button{
-  font-size: large;
-  border: none;
-  background-color:rgba(117, 117, 117, 0.212);
-  width: 30pc;
-  height: 80px;
-  border-radius: 50px;
-  cursor: pointer;
-  justify-content: center;
-  margin: 30px;
-  
-  color: rgb(255, 255, 255);
-  box-shadow: rgb(255, 255, 255) -2px -2px 0px, rgba(255, 255, 255) 0px -3px 0px, rgba(255, 255, 255) 0px 0px 0px, rgba(255, 255, 255) -3px 0px 0px ;
-}
-#answer-1, #answer-2, #answer-3, #answer-4{
-  
-  margin-right: 100px;
-  margin-left: 50px;
-}
-#question h1{
-  line-height: 1.4;
-  position: relative;
-}
-#barp{
-  text-align: right;
-  width: 400px;
-  height: 15px;
-  background: white;
-  margin-bottom: 50px;
-  position: relative;
 }
