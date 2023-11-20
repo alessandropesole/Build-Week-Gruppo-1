@@ -378,3 +378,12 @@ svg #circle {
   color: white;
   font-family: 'Outfit', sans-serif;
 }
+
+#correct h3, #wrong h3 {
+  margin:0;
+  font-size: 4em; 
+}
+#correct h2, #wrong h2 {
+  margin:0;
+}
+

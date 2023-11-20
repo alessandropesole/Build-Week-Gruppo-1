@@ -253,35 +253,42 @@ function risposteSbagliate () {
 
 
 
-function mostraRisultati (score) {
+function mostraRisultati(score) {
   const totaleRisposte = score + wrongAnswers;
   const perCorrette = Math.round((score / totaleRisposte) * 100);
   const perSbagliate = Math.round((wrongAnswers / totaleRisposte) * 100);
-  let totaleCorrette = document.querySelector('#correct p');
-  let percentualeCorrette = document.querySelector('#correct h3');
-  percentualeCorrette.innerText = `${perCorrette} %`; 
-  totaleCorrette.innerText = `${score}/${lunghezzaArray} questions`;
-  let totaleSbagliate = document.querySelector('#wrong p');
-  let percentualeSbagliate = document.querySelector('#wrong h3');
-  totaleSbagliate.innerText = `${wrongAnswers}/${lunghezzaArray} questions`; 
-  percentualeSbagliate.innerText = `${perSbagliate} %`; 
-  
+
+  let risultatoTestuale =
+    perCorrette > perSbagliate ? 'Complimenti, hai superato il test.' : 'Mi dispiace, ritenta la prossima volta.';
+
   const canvas = document.getElementById('donutChart');
 
-const grafico = canvas.getContext('2d');
-new Chart(grafico, {
+  let totaleCorrette = document.querySelector('#correct p');
+  totaleCorrette.innerText = `${score}/${lunghezzaArray} questions`;
+  //console.log(score);
+  let percentualeCorrette = document.querySelector('#correct h3');
+  percentualeCorrette.innerText = `${perCorrette} %`; 
+  totaleCorrette.innerText = `${score}/${lunghezzaArray} questions`; 
+  
+
+  //console.log(score);
+  let totaleSbagliate = document.querySelector('#wrong p');
+  totaleSbagliate.innerText = `${wrongAnswers}/${lunghezzaArray} questions`;
+  let percentualeSbagliate = document.querySelector('#wrong h3');
+  percentualeSbagliate.innerText = `${perSbagliate}%`;
+
+  const grafico = document.getElementById('donutChart').getContext('2d');
+  const donutChart = new Chart(grafico, {
     type: 'doughnut',
     data: {
         datasets: [{
             data: [perSbagliate, perCorrette],
-            backgroundColor: ['#d20094', '#00ffff'],
-            borderWidth: 1,
-            
+            backgroundColor: ['#d20094', '#00ffff']
         }]
     },
     options: {
-        maintainAspectRatio: false,
-        cutout:200
+        maintainAspectRatio: false
     }
 });
+ 
 }
