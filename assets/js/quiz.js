@@ -247,9 +247,8 @@ function numeroDomanda() {
 }
 
 function risposteSbagliate () {
-  wrongAnswers = ((lunghezzaArray - 1) - score);
+  wrongAnswers = ((lunghezzaArray -1 ) - score);
   return wrongAnswers;
-//console.log(wrongAnswers);
 }
 
 
@@ -261,10 +260,7 @@ function mostraRisultati (score) {
   let totaleCorrette = document.querySelector('#correct p');
   let percentualeCorrette = document.querySelector('#correct h3');
   percentualeCorrette.innerText = `${perCorrette} %`; 
-  totaleCorrette.innerText = `${score}/${lunghezzaArray} questions`; 
-  
-
-  //console.log(score);
+  totaleCorrette.innerText = `${score}/${lunghezzaArray} questions`;
   let totaleSbagliate = document.querySelector('#wrong p');
   let percentualeSbagliate = document.querySelector('#wrong h3');
   totaleSbagliate.innerText = `${wrongAnswers}/${lunghezzaArray} questions`; 
@@ -278,12 +274,14 @@ new Chart(grafico, {
     data: {
         datasets: [{
             data: [perSbagliate, perCorrette],
-            backgroundColor: ['#d20094', '#00ffff']
+            backgroundColor: ['#d20094', '#00ffff'],
+            borderWidth: 1,
+            
         }]
     },
     options: {
-        maintainAspectRatio: false
+        maintainAspectRatio: false,
+        cutout:200
     }
 });
- 
 }
