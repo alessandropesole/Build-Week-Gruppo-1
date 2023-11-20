@@ -146,6 +146,8 @@ section p {
 }
 
 .stars {
+  margin-top: 60px;
+  margin-bottom: 60px;
   cursor: pointer;
 
   &[data-stars] {
@@ -283,14 +285,15 @@ svg {
   height: 40px;
   transform: rotateY(-180deg) rotateZ(-90deg);
 }
+
 svg #circle {
   stroke-dasharray: 113px;
   stroke-dashoffset: 0px;
   stroke-linecap: round;
   stroke-width: 5px;
-  stroke: red;
+  stroke: #00ffff;
   fill: none;
-  animation: countdown 200s linear infinite forwards;
+  animation: countdown 20s linear infinite forwards;
 }
 
 @keyframes countdown {
@@ -301,9 +304,10 @@ svg #circle {
     stroke-dashoffset: 113px;
   }
 }
+
 #circle1 {
   stroke-width: 5px;
-  stroke: white;
+  stroke: #ffffff60;
   fill: none;
 }
 
