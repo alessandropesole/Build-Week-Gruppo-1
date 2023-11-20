@@ -1,5 +1,6 @@
 const questions = [
   {
+    id: 0,
     category: 'Science: Computers',
     type: 'multiple',
     difficulty: 'easy',
@@ -12,6 +13,7 @@ const questions = [
     ],
   },
   {
+    id: 1,
     category: 'Science: Computers',
     type: 'multiple',
     difficulty: 'easy',
@@ -21,6 +23,7 @@ const questions = [
     incorrect_answers: ['Static', 'Private', 'Public'],
   },
   {
+    id: 2,
     category: 'Science: Computers',
     type: 'boolean',
     difficulty: 'easy',
@@ -29,6 +32,7 @@ const questions = [
     incorrect_answers: ['True'],
   },
   {
+    id: 3,
     category: 'Science: Computers',
     type: 'boolean',
     difficulty: 'easy',
@@ -38,6 +42,7 @@ const questions = [
     incorrect_answers: ['True'],
   },
   {
+    id: 4,
     category: 'Science: Computers',
     type: 'multiple',
     difficulty: 'easy',
@@ -47,6 +52,7 @@ const questions = [
     incorrect_answers: ['.png', '.jpeg', '.gif'],
   },
   {
+    id: 5,
     category: 'Science: Computers',
     type: 'multiple',
     difficulty: 'easy',
@@ -59,6 +65,7 @@ const questions = [
     ],
   },
   {
+    id: 6,
     category: 'Science: Computers',
     type: 'multiple',
     difficulty: 'easy',
@@ -68,6 +75,7 @@ const questions = [
     incorrect_answers: ['Ice Cream Sandwich', 'Jelly Bean', 'Marshmallow'],
   },
   {
+    id: 7,
     category: 'Science: Computers',
     type: 'multiple',
     difficulty: 'easy',
@@ -76,6 +84,7 @@ const questions = [
     incorrect_answers: ['120', '160', '100'],
   },
   {
+    id: 8,
     category: 'Science: Computers',
     type: 'boolean',
     difficulty: 'easy',
@@ -84,6 +93,7 @@ const questions = [
     incorrect_answers: ['True'],
   },
   {
+    id: 9,
     category: 'Science: Computers',
     type: 'multiple',
     difficulty: 'easy',
@@ -108,6 +118,13 @@ let answer2 = document.querySelector('#answer-2 button');
 let answer3 = document.querySelector('#answer-3 button');
 let answer4 = document.querySelector('#answer-4 button');
 let answerLine2 = document.getElementById('answer-line2');
+let registraRisposte = 0;
+let lunghezzaArray = questions.length;
+let wrongAnswers = 0;
+let numeroRisposteDate = 0;
+const results = document.getElementById('results'); 
+
+
 
 let answer = '';
 
@@ -138,48 +155,73 @@ function caricaQuiz() {
     }
     setTimer();
     numeroDomanda();
+    risposteSbagliate();
   }
 }
 
 answer1.addEventListener('click', function () {
-  verificaRisposta(answer1.innerText);
-});
-answer2.addEventListener('click', function () {
-  verificaRisposta(answer2.innerText);
-});
-answer3.addEventListener('click', function () {
-  verificaRisposta(answer3.innerText);
-});
-answer4.addEventListener('click', function () {
-  verificaRisposta(answer4.innerText);
+  answer = answer1.innerText;
+  verificaRisposta();
 });
 
-function verificaRisposta(answer) {
-  console.log(answer);
+answer2.addEventListener('click', function () {
+  answer = answer2.innerText;
+  verificaRisposta();
+});
+
+answer3.addEventListener('click', function () {
+  answer = answer3.innerText;
+  verificaRisposta();
+});
+
+answer4.addEventListener('click', function () {
+  answer = answer4.innerText;
+  verificaRisposta();
+});
+
+
+function verificaRisposta() {
+ // console.log(answer);
+ 
   if (answer === answer1.innerText) {
     score++;
+    //array registra risposte
     console.log('risposta esatta');
+  } 
+  numeroRisposteDate++; 
+  if (numeroRisposteDate === lunghezzaArray) {
+ paginaQuiz.classList.add('hidden'); 
+ results.classList.remove('hidden'); 
+mostraRisultati (score);
+
   }
+
   clearInterval(interval);
   cambioDomanda();
+  return score;
+
 }
 
 // Cambio domanda
 
 function cambioDomanda() {
   questionNumber++;
+  
   caricaQuiz();
+
 }
 
 let interval;
 
 function setTimer() {
+  let countdownNumerEl= document.getElementById('countdown-number');
   let timer = 20;
-  countdown.innerHTML = timer;
-
+  countdownNumerEl.textContent=timer;
+  countdownNumerEl.innerHTML = timer;
+  
   interval = setInterval(function () {
     timer--;
-    countdown.innerHTML = timer;
+    countdownNumerEl.innerHTML = timer;
 
     if (timer === 0) {
       clearInterval(interval);
@@ -189,13 +231,59 @@ function setTimer() {
 }
 
 function numeroDomanda() {
-  let lunghezzaArray = questions.length;
-
+  
+  
   const h5 = document.createElement('h5');
+  const seh5 = counter.querySelector('h5'); 
+  if (seh5) {
+    counter.removeChild(seh5);
+  }
   counter.appendChild(h5);
+  
   h5.innerHTML = `QUESTION ${
-    questionNumber + 1
-  } <span class="">/ ${lunghezzaArray}</span>`;
+    questionNumber+1
+  } <span class="">/ ${lunghezzaArray}</span>`; 
+  
+}
+
+function risposteSbagliate () {
+  wrongAnswers = ((lunghezzaArray - 1) - score);
+  return wrongAnswers;
+//console.log(wrongAnswers);
 }
 
 
+
+function mostraRisultati (score) {
+  const totaleRisposte = score + wrongAnswers;
+  const perCorrette = Math.round((score / totaleRisposte) * 100);
+  const perSbagliate = Math.round((wrongAnswers / totaleRisposte) * 100);
+  let totaleCorrette = document.querySelector('#correct p');
+  let percentualeCorrette = document.querySelector('#correct h3');
+  percentualeCorrette.innerText = `${perCorrette} %`; 
+  totaleCorrette.innerText = `${score}/${lunghezzaArray} questions`; 
+  
+
+  //console.log(score);
+  let totaleSbagliate = document.querySelector('#wrong p');
+  let percentualeSbagliate = document.querySelector('#wrong h3');
+  totaleSbagliate.innerText = `${wrongAnswers}/${lunghezzaArray} questions`; 
+  percentualeSbagliate.innerText = `${perSbagliate} %`; 
+  
+  const canvas = document.getElementById('donutChart');
+
+const grafico = canvas.getContext('2d');
+new Chart(grafico, {
+    type: 'doughnut',
+    data: {
+        datasets: [{
+            data: [perSbagliate, perCorrette],
+            backgroundColor: ['#d20094', '#00ffff']
+        }]
+    },
+    options: {
+        maintainAspectRatio: false
+    }
+});
+ 
+}
