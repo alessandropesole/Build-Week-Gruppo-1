@@ -322,7 +322,7 @@ svg #circle {
 }
 
 #results {
-  line-height: 1.1em;
+  line-height: 0em;
 }
 
 #correct h2 {
@@ -337,28 +337,42 @@ svg #circle {
   font-family: 'Outfit';
   font-size: 60px;
   color: white;
-  text-align: right;
 }
 
 #summary {
+  width: 100%;
+  display: block;
   margin-left: 90px;
   margin-right: 90px;
-  position: relative;
-  margin-top: 90px;
 }
 
-#correct {
-  position: absolute;
-  float: left;
-  left: 150px;
-  top: 0;
+#summary h3 {
+  font-size: 2.4em;
+  line-height: 0.5em;
 }
 
-#wrong {
-  position: absolute;
-  right: 150px;
-  float: left;
-  top: 0;
+#summary #donutChart {
+  text-align: center;
+}
+
+#correct,
+#correct p {
+  text-align: left;
+}
+
+#correct p,
+#wrong p {
+  font-size: 1em;
+}
+
+#wrong,
+#wrong p {
+  text-align: right;
+}
+
+.risultati {
+  width: 30%;
+  display: inline-block;
 }
 
 .hidden {
@@ -367,6 +381,7 @@ svg #circle {
 
 .footer {
   text-align: center;
+  margin-top: 60px;
 }
 
 .button1 {
@@ -381,3 +396,20 @@ svg #circle {
   color: white;
   font-family: 'Outfit', sans-serif;
 }
+
+/* .container-donut {
+  position: relative;
+}
+
+.donut-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.donut-text p {
+  text-align: center;
+  font-size: 5px;
+  font-weight: bold;
+} */

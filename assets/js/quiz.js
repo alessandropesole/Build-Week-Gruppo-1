@@ -250,6 +250,11 @@ function mostraRisultati(score) {
   const perCorrette = Math.round((score / totaleRisposte) * 100);
   const perSbagliate = Math.round((wrongAnswers / totaleRisposte) * 100);
 
+  let risultatoTestuale =
+    perCorrette > perSbagliate
+      ? 'Complimenti, hai superato il test.'
+      : 'Mi dispiace, ritenta la prossima volta.';
+
   const canvas = document.getElementById('donutChart');
 
   let totaleCorrette = document.querySelector('#correct p');
@@ -263,8 +268,8 @@ function mostraRisultati(score) {
   let percentualeSbagliate = document.querySelector('#wrong h3');
   percentualeSbagliate.innerText = `${perSbagliate}%`;
 
-  const grafico = canvas.getContext('2d');
-  new Chart(grafico, {
+  const grafico = document.getElementById('donutChart').getContext('2d');
+  const donutChart = new Chart(grafico, {
     type: 'doughnut',
     data: {
       datasets: [
@@ -276,6 +281,27 @@ function mostraRisultati(score) {
     },
     options: {
       maintainAspectRatio: false,
+      cutout: 110,
     },
+    plugins: [
+      {
+        id: 'text',
+        beforeDraw: function (chart, a, b) {
+          let width = chart.width,
+            height = chart.height,
+            ctx = chart.ctx;
+          ctx.restore();
+          let fontSize = (0.5).toFixed(2);
+          ctx.font = fontSize + 'em sans-serif';
+          ctx.textBaseline = 'middle';
+          let text = risultatoTestuale,
+            textX = Math.round((width - ctx.measureText(text).width) / 2),
+            textY = height / 2;
+          ctx.fillText(text, textX, textY);
+          ctx.fillStyle = 'white';
+          ctx.save();
+        },
+      },
+    ],
   });
 }
