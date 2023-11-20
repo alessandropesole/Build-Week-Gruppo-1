@@ -254,36 +254,62 @@ function risposteSbagliate () {
 
 
 
-function mostraRisultati (score) {
+function mostraRisultati(score) {
   const totaleRisposte = score + wrongAnswers;
   const perCorrette = Math.round((score / totaleRisposte) * 100);
   const perSbagliate = Math.round((wrongAnswers / totaleRisposte) * 100);
-  let totaleCorrette = document.querySelector('#correct p');
-  let percentualeCorrette = document.querySelector('#correct h3');
-  percentualeCorrette.innerText = `${perCorrette} %`; 
-  totaleCorrette.innerText = `${score}/${lunghezzaArray} questions`; 
-  
 
-  //console.log(score);
-  let totaleSbagliate = document.querySelector('#wrong p');
-  let percentualeSbagliate = document.querySelector('#wrong h3');
-  totaleSbagliate.innerText = `${wrongAnswers}/${lunghezzaArray} questions`; 
-  percentualeSbagliate.innerText = `${perSbagliate} %`; 
-  
+  let risultatoTestuale =
+    perCorrette > perSbagliate ? 'Complimenti, hai superato il test.' : 'Mi dispiace, ritenta la prossima volta.';
+
   const canvas = document.getElementById('donutChart');
 
-const grafico = canvas.getContext('2d');
-new Chart(grafico, {
+  let totaleCorrette = document.querySelector('#correct p');
+  totaleCorrette.innerText = `${score}/${lunghezzaArray} questions`;
+  //console.log(score);
+  let percentualeCorrette = document.querySelector('#correct h3');
+  percentualeCorrette.innerText = `${perCorrette}%`;
+
+  let totaleSbagliate = document.querySelector('#wrong p');
+  totaleSbagliate.innerText = `${wrongAnswers}/${lunghezzaArray} questions`;
+  let percentualeSbagliate = document.querySelector('#wrong h3');
+  percentualeSbagliate.innerText = `${perSbagliate}%`;
+
+  const grafico = document.getElementById('donutChart').getContext('2d');
+  const donutChart = new Chart(grafico, {
     type: 'doughnut',
     data: {
-        datasets: [{
-            data: [perSbagliate, perCorrette],
-            backgroundColor: ['#d20094', '#00ffff']
-        }]
+      datasets: [
+        {
+          data: [perSbagliate, perCorrette],
+          backgroundColor: ['#d20094', '#00ffff'],
+        },
+      ],
     },
     options: {
-        maintainAspectRatio: false
-    }
-});
- 
+      maintainAspectRatio: false,
+      cutout: 170,
+    },
+    plugins: [
+      {
+        id: 'text',
+        beforeDraw: function (chart, a, b) {
+          let width = chart.width,
+            height = chart.height,
+            ctx = chart.ctx;
+          ctx.restore();
+          let fontSize = (1).toFixed(2);
+          ctx.font = fontSize + 'em sans-serif';
+          ctx.textBaseline = 'middle';
+          let text = risultatoTestuale,
+            textX = Math.round((width - ctx.measureText(text).width) / 2),
+            textY = height / 2;
+          ctx.fillText(text, textX, textY);
+          ctx.fillStyle ='white';
+          
+          ctx.save();
+        },
+      },
+    ],
+  });
 }
