@@ -217,11 +217,10 @@ svg {
 }
 #paginaQuiz {
   text-align: center;
-  margin-top: 200px;
+  margin-top: 130px;
 }
 #question h1 {
   margin-bottom: 60px;
-  line-height: 1.1em;
 }
 
 #four-answers button {
@@ -233,13 +232,11 @@ svg {
   border-radius: 50px;
   cursor: pointer;
   justify-content: center;
-  margin: 20px 20px;
-
+  margin: 20px auto;
   color: rgb(255, 255, 255);
   box-shadow: rgb(255, 255, 255) -2px -2px 0px, rgba(255, 255, 255) 0px -3px 0px,
     rgba(255, 255, 255) 0px 0px 0px, rgba(255, 255, 255) -3px 0px 0px;
 }
-
 #answer-1,
 #answer-2,
 #answer-3,
@@ -248,7 +245,139 @@ svg {
   margin-right: 20px;
   margin-left: 20px;
 }
+#four-answers button:hover {
+  background-image: linear-gradient(#d20094, rgb(100, 32, 69));
+}
 
-#span {
+#question h1 {
+  margin-bottom: 60px;
+  line-height: 1.1em;
+}
+#counter span {
   color: #d20094;
+}
+#counter {
+  margin-top: 200px;
+}
+
+#countdown {
+  position: relative;
+  margin: auto;
+  margin-top: 100px;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+}
+
+#countdown-number {
+  color: white;
+  display: inline-block;
+  line-height: 40px;
+}
+
+#countdown svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  transform: rotateY(-180deg) rotateZ(-90deg);
+}
+svg #circle {
+  stroke-dasharray: 113px;
+  stroke-dashoffset: 0px;
+  stroke-linecap: round;
+  stroke-width: 5px;
+  stroke: red;
+  fill: none;
+  animation: countdown 200s linear infinite forwards;
+}
+
+@keyframes countdown {
+  from {
+    stroke-dashoffset: 0px;
+  }
+  to {
+    stroke-dashoffset: 113px;
+  }
+}
+#circle1 {
+  stroke-width: 5px;
+  stroke: white;
+  fill: none;
+}
+
+#results h1 {
+  text-align: center;
+  font-family: 'Outfit';
+  font-size: 60px;
+  font-weight: 700;
+}
+
+#results p {
+  font-size: 32px;
+  text-align: center;
+  font-family: 'Outfit';
+  font-weight: 300;
+}
+
+#results {
+  line-height: 1.1em;
+}
+
+#correct h2 {
+  font-weight: 500;
+  font-family: 'Outfit';
+  font-size: 60px;
+  color: white;
+}
+
+#wrong h2 {
+  font-weight: 500;
+  font-family: 'Outfit';
+  font-size: 60px;
+  color: white;
+  text-align: right;
+}
+
+#summary {
+  margin-left: 90px;
+  margin-right: 90px;
+  position: relative;
+  margin-top: 90px;
+}
+
+#correct {
+  position: absolute;
+  float: left;
+  left: 150px;
+  top: 0;
+}
+
+#wrong {
+  position: absolute;
+  right: 150px;
+  float: left;
+  top: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.footer {
+  text-align: center;
+}
+
+.button1 {
+  background-color: transparent;
+  font-size: 2em;
+  font: bold;
+  padding: 15px 60px;
+  cursor: pointer;
+  -webkit-box-shadow: 2px 0px 18px 3px #232c7c;
+  box-shadow: 2px 0px 18px 3px #2b3899;
+  border: 3px solid white;
+  color: white;
+  font-family: 'Outfit', sans-serif;
 }
