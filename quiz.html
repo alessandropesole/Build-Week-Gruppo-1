@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz</title>
+ 
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
@@ -11,19 +12,25 @@
     <div id="container">
       <header>
         <img src="assets/images/epicode_logo.png" alt="logo" />
-        <div id="countdown"></div>
+        
       </header>
 
       <main>
         <div id="paginaQuiz" onload="caricaQuiz()">
-          
-
+          <div id="countdown">
+            <div id="countdown-number"></div>
+            <svg>
+              <circle id="circle1" r="18" cx="20" cy="20"></circle>
+              <circle id="circle" r="18" cx="20" cy="20"></circle>
+            </svg>
+          </div>
           <div id="question">
             <h1></h1>
           </div>
 
           <div id="answers">
             <!-- Display: none o block al div corretto, in base alla tipologia di domanda-->
+            
             <div id="four-answers">
               <div class="answers-line">
                 <div id="answer-1">
@@ -43,12 +50,27 @@
               </div>
             </div>
           </div>
-          <div id="counter">
+        
+          <div id="counter"></div>
+        </div>
+        <div id="results" class="hidden">
+          <div class="results">
+            <h1>Results</h1>
+            <p>The summary of your answers:</p>
+          </div>
+          <div id="summary">
+            <div id="correct"><h2>Correct</h2> <h3></h3> <p></p> </div>
+            <canvas id="donutChart" width="400" height="500"></canvas>
+            <div id="wrong"><h2>Wrong</h2> <h3></h3> <p></p> </div>
+            
+          </div>
+          <div class="footer">
+            <button type="button" class='button1' onclick="window.location.href = 'review.html';"><b>RATE US</b></button>
           </div>
         </div>
-        <div id="results" class="hidden"></div>
       </main>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="assets/js/quiz.js"></script>
   </body>
 </html>
