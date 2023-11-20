@@ -148,6 +148,8 @@ section p {
 
 .stars {
   cursor: pointer;
+  margin-bottom: 70px;
+  margin-top: 30px;
 
   &[data-stars] {
     .star path {
@@ -285,7 +287,7 @@ svg #circle {
   stroke-dashoffset: 0px;
   stroke-linecap: round;
   stroke-width: 5px;
-  stroke: red;
+  stroke: #00ffff;
   fill: none;
   animation: countdown 20s linear infinite forwards;
 }
@@ -300,7 +302,7 @@ svg #circle {
 }
 #circle1 {
   stroke-width: 5px;
-  stroke: white;
+  stroke: #ffffff60;
   fill: none;
 }
 
